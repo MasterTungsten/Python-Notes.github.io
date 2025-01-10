@@ -1,0 +1,128 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Regular Expression</title>
+</head><body><ul><span style="font-size: 16pt"><li style="list-style-type: none"/>
+</span></ul>
+<span style="font-size: 14pt">Regular Expressions or also known as regexes is just a pattern used for matching data in programming languages.<br/>
+<ul><li>For example for your project of a form, a website or a web application you want user to add their email and to validate that you use regexes, just to ensure that the user entered a valid email and not any other thing.</li>
+<li>So using regexes we are going to define patterns in our code to validate against data from user. </li>
+</ul>
+<br/>
+For the above example:<ul><li>An email address must contain an @.</li>
+<li>The below code checks whether the input contains an @ or not.</li>
+<li>But there is a problem as you can see, the program validates even for just a &quot;@&quot; input which is not a valid email address.</li>
+<li>An email must contain an @ but not only @.</li>
+<li>There reare other parts such as email header, host name, domain name.</li>
+<li>Here the .strip() fucntionsimply removes any unecessary space from the front and the back of the input.</li>
+</ul>
+<br/>
+<img src="image.png"/>		<img src="image 2.png"/><br/>
+<br/>
+Now let's improve the program :<ul><li>An email must also contain a valid domain name say for this one we use &quot;.com&quot;.</li>
+<li>Same problem as above, though our conditions are not totally wrong, they are incomplete.</li>
+</ul>
+<br/>
+<img src="image 3.png"/>		<img src="image 4.png"/><br/>
+<br/>
+Moving ahead in making our program little bit more effective we can do this:<ul><li>We are simply making two variables and splitting them with &quot;@&quot;. More precisely &quot;username@domain&quot;,username must not be empty and the domain must contain a &quot;.&quot;</li>
+<li>In the if statement we are checking that if there is some input for usrname and a &quot;.&quot;in domain only then print valid, otherwise invalid.</li>
+<li>Again this has a drawback, see the output...</li>
+<li>The input with only &quot; r@.&quot; which technically is not a valid email address but according to our python currently its satisfying every condition so it is a valid email address.</li>
+</ul>
+<br/>
+<img src="image 5.png"/>		<img src="image 6.png"/><br/>
+<br/>
+<img src="image 7.png"/>			<img src="image 8.png"/><br/>
+<br/>
+<ul><li>Well now we can do plenty more stuff to format this in the form we want but why do so many things when Python has a special module for it.</li>
+</ul>
+Continued in the next child notebook.....<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</span></body></html>

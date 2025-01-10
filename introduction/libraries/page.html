@@ -1,0 +1,350 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Libraries</title>
+</head><body><ul><span style="font-size: 14pt"><li>Libraries are some piece of codes that can be used in different programs or projects when you need to use.</li>
+<li>Libraries are written by others and are available to everyone.</li>
+<li>For Example one is "random" which allows user to perform things randomly for example flipping a coin.</li>
+<li>Now question arises how do we use this libraries/module/peice of code in or program, for that we need another keyword which is "import".</li>
+</span></ul>
+<span style="font-size: 14pt"><br/>
+<br/>
+See the syntax of using random in actual code:<ul><li style="list-style-type: none">random.choice(seq)</li>
+<li style="list-style-type: none">What does the above code says is: "The module 'random' contains the function choice() with a parameter sequence {seq} = list</li>
+</ul>
+<br/>
+<img src="image.png" />&#09;&#09;<img src="image 2.png" /><br/>
+<ul><li>Now watch here how I am using the import keyword for using the function choice() from the module random.</li>
+<li>But i have to everytime type random.choice() to specify exactly from which module the function choice is coming for python.</li>
+<li>So what could we do instead is use another keyword that is "from".</li>
+<li>The "from" keyword allows us to use a function from a certain module. See how...</li>
+</ul>
+<br/>
+<img src="image 3.png" />&nbsp; &#09;<br/>
+<br/>
+Output remains the same. But now I don't need to type again and again the name of module I am using the function from.<br/>
+<br/>
+Another function from random module is random.randint(a, b)<br/>
+This function returns value from the range of the number a and the number b including both the numbers a and b.<br/>
+See how..<br/>
+<br/>
+<img src="image 4.png" />&#09;&#09;<img src="image 5.png" /><br/>
+<br/>
+Another function is random.shuffle(x) here we can shuffle the contains of a list using this function actually this function does not return any value after shuffling so we need to print the shuffled list one at a time using a loop because python formats the list by its own.<br/>
+See how...<br/>
+<br/>
+<img src="image 6.png" />&#09;<img src="image 7.png" /><br/>
+<br/>
+<br/>
+Statistics is another Module/Library in python which is commonly used for analysing data and getting statistical outputs or results based on our data.<br/>
+<br/>
+Here we use the mean function available in module statistics for calculating mean of the given list.<br/>
+<br/>
+<img src="image 8.png" />&#09;&#09;<img src="image 9.png" /><br/>
+<br/>
+There is one more feature known as command-line arguments which allow you to execute commands just exactly while executing the program.<br/>
+We can input exactly while the program is running.<br/>
+for example python hello.py .... we can pass input function here just see how....<br/>
+<br/>
+We use sys module in python there is a magical variable that exists, called argv the variable is "sys.argv" &nbsp; which is a list<br/>
+<br/>
+<img src="image 10.png" />&#09;&#09;<img src="image 11.png" /><br/>
+<br/>
+Just see here how we have given input name David after typing python name.py David which directly stores value of the user's name in the variable sys.argv.<br/>
+<ul><li>Now watch carefully that here in the program above we have passed the parameter to be printed as 1.</li>
+<li>Because in previous programs we have seen that loops start their indexing from 0, so here in sys.argv[0] the variable is basically a list so it stores the file name first, then second comes the parameter we pass that is the name of the user.</li>
+<li>The benefit is that we can actually access the words that are typed after the prompt in the command line.</li>
+</ul>
+<br/>
+<img src="image 12.png" /><br/>
+<br/>
+This is a common error we encounter in python when we go to far in the left or right in the program limit.<br/>
+<br/>
+Atleast the user doesn't see an error now <br/>
+<br/>
+<img src="image 13.png" />&#09;<img src="image 14.png" /><br/>
+<br/>
+See how we handle this error without using exceptions:<br/>
+<br/>
+<img src="image 15.png" />&#09;<img src="image 16.png" /><br/>
+<br/>
+Now there is another function known as sys.exit() , as the name suggests it particularly tells the program when to exit on a line.<br/>
+<br/>
+<img src="image 17.png" />&#09;&#09;Works the same!!<br/>
+<br/>
+Now what we will do is just suppose we do not want to take arguments only for David, we want to take multiple input arguments say for Jacob, James, Harry etc. So see what we do...<br/>
+<ul><li>Here, furthermore we do not want to limit the maximum number of words typed in so we remove the elif part.</li>
+<li>To print each name given as the input argument we create a for loop which will iterate over each of the names in the list(sys.argv).</li>
+<li>But watch how instead of 3 we got 4 names printed in the terminal, this is because the filename is the very first value in it.</li>
+</ul>
+<br/>
+<img src="image 18.png" />&#09;<img src="image 19.png" /><br/>
+<br/>
+Watch how we overcome ths problem using another feature of python, slices!!!<br/>
+<br/>
+This will give us a slice of the list.. see how!<br/>
+<br/>
+<img src="image 20.png" />&#09;<img src="image 21.png" /><br/>
+<br/>
+We can Slice the list from beginning, between, and from end. Just by changing the syntax as follows: sys.argv[1:-1] for slicing the end part.<br/>
+<br/>
+Now moving further we discuss about packages in python.<br/>
+<br/>
+Packages are third party libraries that we can install on our systems and use even more functionalitieswhich are created or developed by others.<br/>
+A website to access different types of packages is PyPi site: pypi.org. His allows us to download all types of packages.<br/>
+<br/>
+Nowadays python and many other languages come with a new feature called package manager which helps us manage packages by itself.<br/>
+<br/>
+In Python it is called pip.<br/>
+<br/>
+For fun see this package named cowsay which literally shows a message that a cow says!!!<br/>
+<br/>
+Its known as ascii art i.e., using only keyboard symbols.<br/>
+<br/>
+<img src="image 22.png" />&#09;&#09;<img src="image 23.png" /><br/>
+<br/>
+There is another function in the cowsay package which is trex!!<br/>
+<br/>
+<img src="image 25.png" /><br/>
+<br/>
+<img src="image 24.png" /><br/>
+<br/>
+Isn't it amazing?<br/>
+<br/>
+Another Important feature is APIs it is Application Programming Interface which is basically python files or functions.<br/>
+<br/>
+But many times APIs refer to third party services that we can write code that talk to a browser or a service and can download some that incorporates in your own program.<br/>
+<br/>
+Now in Python you have a Library requests which allows you to make web requests or internet requests using the python code essentially as you were a browser yourself , which helps us to start automating requests to access URLs that start with http or https.<br/>
+<br/>
+This too can be used from command line and you can find the documentation here:<br/>
+<a href="pypi.org/project/requests">requests<br/>
+<br/>
+</a>JSON: JavaScript Object Notation used as Language Agnostic Format for exchanging data between computers.<br/>
+<br/>
+API: A mechanism whereby I can access data located at someone else's server and integrate it in my program.<br/>
+<br/>
+As chrome is not created by me I need to write some python code which actually pretends to be a browser and accesses this data.<br/>
+<br/>
+Now Apple has a Database for its users that allows users to access the songs in it when they type the following <br/>
+<br/>
+<a href="https://itunes.apple.com/search?entity=song&minit=1&termweezer">https://itunes.apple.com/search?entity=song&amp;limit=1&amp;termweezer</a><br/>
+<br/>
+Now here entity = song, limit tells the number of songs, and term asks you the band or the name of the singer.<br/>
+<br/>
+See how the link returns a JSON file when we access this database link using python program that pretends to be a program, where we ask the singer's name to the user.<br/>
+<br/>
+<img src="image 26.png" /><br/>
+<br/>
+<br/>
+<img src="image 27.png" width="1813" height="329" /><br/>
+<br/>
+Now here you can clearly see that the result is just a mess of json code, but notice carefully its a python dictionary!!<br/>
+We can little bit indent it and make it more clear just see how!<br/>
+<br/>
+<img src="image 28.png" /><br/>
+<br/>
+<img src="image 29.png" /><br/>
+&nbsp; <br/>
+See how we extract 50 songs..<br/>
+<br/>
+<img src="image 30.png" /><br/>
+<br/>
+<img src="image 31.png" /><br/>
+<br/>
+That's the power of libraries.<br/>
+<br/>
+Now see how we can create our own libraries using python:<br/>
+<br/>
+For example consider we want to create a library where we make functions for saying Hello and goodbye to the user when the functions are called.<br/>
+<br/>
+See how..<br/>
+<br/>
+<img src="image 32.png" />&#09;<img src="image 33.png" /><br/>
+<br/>
+Here we have created a main function for simplicity and sake of easily organising our functions in desired order.<br/>
+We call the main function at the end of the program.<br/>
+Now lets use this library in another program!!<br/>
+See how it works..<br/>
+<br/>
+<img src="image 34.png" />&#09;<img src="image 35.png" /><br/>
+<br/>
+Ohhh! What has gone wrong? Now it seems that we cannot call the main() function just that simply at the end of the program because then when the python reads program from top to bottom, left to right, the main() function gets executed no matter what.<br/>
+<br/>
+What we can do to solve it? Watch another feature of python another keyword reserved for a variable:<br/>
+<br/>
+Here as shown below &nbsp;the variable __name__ is a special symbol in python that tells python that when __name__ == "__main__" then and only then you should execute the main function.<br/>
+<br/>
+<img src="image 36.png" />&#09;<img src="image 37.png" /><br/>
+<ul><li>This variable is a special variable whose value is automatically set by python to be "main" when yourun a file from command line.</li>
+</ul>
+<br/>
+<img src="image 38.png" /><br/>
+<ul><li>Notice that when we run python of sayings.py the program stills runs perfectly fine.</li>
+<li>Because name is automatically set to main when we run this same file from command line.</li>
+<li>But now When we import this library in another program the name is not going to be set to main, it will probably set to the name of the module.</li>
+<li>In this case "sayings" name of the module.</li>
+</ul>
+<br/>
+<img src="image 39.png" />&#09;<img src="image 40.png" /><br/>
+<br/>
+So here the program only says hello to the user.<br/>
+<br/>
+We ca do the same with goodbye function see how..<br/>
+<br/>
+<img src="image 41.png" />&#09;<img src="image 42.png" /><br/>
+<br/>
+<br/>
+&nbsp;<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</span></body></html>

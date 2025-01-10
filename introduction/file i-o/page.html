@@ -1,0 +1,251 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>File I/O</title>
+</head><body><span style="font-size: 14pt">File Input and Output<br/>
+<ul><li>Handling files with python is interesting as we can manipulate data using programming.</li>
+<li>For example, suppose we want user's name to be stored in a file.</li>
+<li>We can do this using the open() function of python, it typically opens a file for us and writes the content of whatever we have assigned to it.</li>
+<li>For instance see here, we will create a variable and ask for user's name,</li>
+<li>Then we use the open() function to create a new names.txt and give it the write permission as weare going to write user's name to it.</li>
+<li>Then we need to store the open function in a variable to be able to easily access it.</li>
+<li>Now we use the write function to write into the file using the input variable.</li>
+<li>And finally we need to close the file.</li>
+</ul>
+<br/>
+<img src="image.png"/>	<img src="image 2.png"/><br/>
+<br/>
+The output looks missing I guess? No actually python has created a new text file named names.txt see..<br/>
+<br/>
+<img src="image 3.png"/>	<br/>
+<br/>
+Now if we again run the python of names.py then Python will again create a new file and write the name inside it, this means the existing file will be overwritten by the new name. See..<br/>
+<img src="image 5.png"/>		<img src="image 4.png"/><br/>
+<br/>
+What can we do to solve this is we need to append the names into the file so that new names get added to the file after the old ones!<br/>
+Watch how we do it..<br/>
+<br/>
+<img src="image 6.png"/>	<img src="image 7.png"/><br/>
+<br/>
+<img src="image 8.png"/><br/>
+<br/>
+Look the change we have made in the code, is only the method or permission given to python that is append instead of write.<br/>
+<br/>
+Now the program successfully appends new names into the file but what exactly have we done wrong as the names seem to get appended exactly at the end of the previous one.<br/>
+<br/>
+<img src="image 9.png"/>		<img src="image 10.png"/><br/>
+<br/>
+Watch now the code looks much cleaner.<br/>
+<br/>
+Now it seems that sometimes when we forget to close the file that data might get lost or corrupted, so to avoid it we need to close the file always.<br/>
+But it is possible to forget to close the file and to avoid this we use the &quot;with&quot; function of python that particularly automates the procedure of opening and closing the file for us.<br/>
+<br/>
+Watch how we use the with function...<br/>
+<br/>
+<img src="image 11.png"/><br/>
+<ul><li>Now what this does is pretty the same but it automates the procedure of opening and closing the file after the code in the indentaion is successfully executed. </li>
+<li>Notice how we have declared the variable after the open function, it says,&quot;perform the operationof opening the file{with name given} and then assign it to the variable assigned to it. It will automatically close once there is no code remaining in the indentation part&quot;.</li>
+</ul>
+<br/>
+Now, assume we have all these names from the desired files but now we want to read these names. Here's how we do it.<br/>
+<br/>
+<img src="image 12.png"/>		<img src="image 13.png"/><br/>
+<br/>
+<br/>
+<img src="image 14.png"/>	<img src="image 15.png"/><br/>
+<br/>
+Now it seems that all the names are displayed perfectly but they doesn't seem to be sorted.<br/>
+See how we can sort them.<br/>
+<br/>
+<img src="image 16.png"/>		<img src="image 17.png"/><br/>
+<br/>
+We can also reverse the order!<br/>
+<br/>
+<img src="image 18.png"/>	<img src="image 19.png"/><br/>
+<ul><li>Now consider a situation where we need to include the house names of the students.</li>
+<li>In that case we use a csv file which is most commonly used when we need to store data in key:value pair.</li>
+<li>See how we use indexing and use the rstrip and split functions to split the contents in a single line as a row and column pair.</li>
+</ul>
+<br/>
+<img src="image 20.png"/>		<img src="image 21.png"/><br/>
+<ul><li style="list-style-type: none">Now if we want to change or edit some file content or just a single name which is not possible we need to create our own program for it.</li>
+<li style="list-style-type: none">We will see it in future.</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none">For now,</li>
+<li style="list-style-type: none"/>
+</ul>
+<img src="image 22.png"/>		Works the same , it is a more precise way to carr out the same opration.<br/>
+<br/>
+See this sorted result, we sort the result using the names of the students.<br/>
+<br/>
+<img src="image 23.png"/>		<img src="image 24.png"/><br/>
+<br/>
+<br/>
+See how we can do the same thing in different ways , we use different methods to do the sam thing.<br/>
+This time we are making dictionaries to store names and houses.<br/>
+<br/>
+<img src="image 25.png"/>		<img src="image 26.png"/><br/>
+<br/>
+If we create an empty dictionary as in line 6 above, and then immediately creating keys and values then we can simply do this all at once, see how..<br/>
+<br/>
+<img src="image 27.png"/><br/>
+<br/>
+We need to sort the result, as in here we have dictionaries inside lists, so how would we sort dictionaries inside of lists.<br/>
+<br/>
+We create a new function named &quot;get_name&quot;, this function will just return the name ofthe student and that's it.!!<ul><li>Here, python allows us to pass a function as a value inside another function, so we can pass the get_name function which only &amp; only fetches the names of students, as a value inside the sorted function.</li>
+<li>This is important because we need to specify it to the sorted function what exactly to sort, i.e., the names of the students.</li>
+<li>So here we pass the get_name function inside the sorted function.</li>
+<li>Tada!! we have a list of students, that is sorted according to their names. </li>
+</ul>
+<br/>
+<img src="image 28.png"/>	<img src="image 29.png"/><br/>
+<br/>
+We can also reverse this!!<br/>
+<br/>
+<img src="image 30.png"/><br/>
+<br/>
+<img src="image 31.png"/><br/>
+<br/>
+We can also sort this based on the houses of the respective students.<br/>
+<br/>
+<img src="image 34.png"/>	<img src="image 35.png"/><br/>
+<br/>
+We can reverse sort based on houses.<br/>
+<br/>
+<img src="image 33.png"/>	<img src="image 32.png"/><br/>
+<br/>
+Here is another interesting feature of python, the no name function, i.e., the &quot;lambda&quot; function which has no name and can actually be recognised with the help of the keyword lambda itself. More specifically Anonymous functions.<br/>
+<br/>
+<img src="image 36.png"/>	 <br/>
+It works the same and we can sort it based on the name and house.<br/>
+<br/>
+All this seems pretty good while handling small amount of data , but now imagine storing the addresses of the students in the csv files, this will create errors in our code as we used the comma[,] as a separator.<ul><li>So if there is a comma in the data then it will exceed the maximum amount of values to unpack and then throw an error</li>
+<li>Here we came to know anout the csv library present in Python to handle the data in csv files.</li>
+<li>The csv module has a built in function, reader which reads the file.</li>
+</ul>
+<br/>
+<img src="image 37.png"/>	<img src="image 38.png"/>	<img src="image 39.png"/><br/>
+<br/>
+See how despite of the commas in the address the program only recognises the outer ones.<br/>
+<br/>
+Here is another interesting thing we can do is write the name os the column into the csv file, so that we can use it further to classify it.<br/>
+Watch how it is done.<br/>
+<br/>
+<img src="image 40.png"/><br/>
+<br/>
+Things to keep in mind:<ul><li>Dont give spaces after commas in the csv file, it generates a key error which is hard to find.</li>
+<li>The DictReader iterates over and reads the dictionary more specifically than a list.</li>
+<li>To use this feature we need to add a little hint in the top of the csv file.</li>
+<li>Result is pretty the same.</li>
+</ul>
+<br/>
+<img src="image 41.png"/>		<img src="image 42.png"/><br/>
+<br/>
+Now this might happen that our csv file might be changed by someone, well in that case if the python file remains unaltered then,<ul><li>If the column names are updated accoding to the data the result remains same.</li>
+<li>The DictReader accesses the key and not the indices no matter where it is located in the csv file, only at the top-most position</li>
+</ul>
+<br/>
+Now while executing this code I encuntered a problem whose cause was unknown to me, actually I still don't know the actual cuase behind it, When I gave Input in the terminal it writes the input name and home in the csv file but it writes that and then leaves one line extra under it.<br/>
+<br/>
+Watch how...<br/>
+<br/>
+<img src="image 43.png"/>  Like this..<br/>
+<br/>
+No to solve this I had to take help of another python keyword namely the &quot;newline&quot;. It seemly restricts the use of any empty lines in the program.<br/>
+<br/>
+<img src="image 45.png"/>		<img src="image 44.png"/><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</span></body></html>

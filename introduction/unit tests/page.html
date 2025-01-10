@@ -1,0 +1,171 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Unit Tests</title>
+</head><body><span style="font-size: 14pt">We are going to write our own tests.<br/>
+<br/>
+That means whatever programs till now we have created we will test all those programs by writing test_program programs.<br/>
+<br/>
+For example we wrote a simple Calculator.py file program to create a simple calculator to calculate square of the given input integer.<br/>
+<br/>
+The syntax looked like this.. with a little bit of modification of our latest conventions the name==main, so that when we import it in another program it works perfectly fine.<br/>
+<br/>
+<img src="image.png"/><br/>
+<br/>
+Now we will create a test_calc.py for writing test program for our Calculator.py. See how!<br/>
+<br/>
+Here we have created a simple test for testing only two cases at the point of Calculator.py .<ul><li>We do not get anything in output as the tests are passed successfully.</li>
+</ul>
+<br/>
+<img src="image 2.png"/>	<img src="image 3.png"/><br/>
+<br/>
+But now for instance we introduce a bug in our original code Calculator.py see the bug,<br/>
+we change the multiplication sign with addition so now, watch how the test_calc runs!!<br/>
+<br/>
+<br/>
+<img src="image 4 2.png"/>	<img src="image 4.png"/><br/>
+<br/>
+It seems that from the two test cases one succeeded and one did not.<br/>
+Probably because 2+2=4 same as 2*2=4 but 3*3=9 and 3+3=6.<br/>
+<br/>
+That's why only one if statement got executed.<br/>
+<br/>
+Now when you compare the actual code versus the test code we see that the number of lines used to write the program is much more than the actual program written.<br/>
+<br/>
+Our goal must be to write a fewer lines of code for the test code.<br/>
+<br/>
+So what another technique can we use, so it comes out that python has another keyword called &quot;assert&quot;.<br/>
+<br/>
+&quot;assert&quot; basically boldly claims something is true: if something is true nothing is going to happen.<br/>
+But if the condition is false, in python using &quot;assert&quot; you are literally going to see an error.<br/>
+<br/>
+See how we use it...<br/>
+<br/>
+<img src="image 5.png"/>	<img src="image 6.png"/><br/>
+<br/>
+This was an AssertionError, a new type of error amongst the previous ones we have already seen.<br/>
+How were we handling errors in python?<br/>
+Yes, using the try: and except: method. Watch now we handle AssertionError. <br/>
+<br/>
+<img src="image 7.png"/>	<img src="image 8.png"/><br/>
+<br/>
+Our code is now more user friendly but Ofcourse not feasible as we need to test infinite cases.<br/>
+<br/>
+<img src="image 9.png"/><br/>
+This is a solution of a problem I encountered during installation of pytest.<br/>
+<br/>
+This what the test looks like; we use the pytest module of python to test the following cases of or Calculator.py file <br/>
+<br/>
+<img src="image 11.png"/><br/>
+<br/>
+</span><span style="font-size: 18pt"><img height="300" src="image 10.png" width="1090"/></span><span style="font-size: 14pt"><br/>
+</span><span style="font-size: 14pt"><br/>
+This is what the test results look like after fixing the bug and when the test passes 100%.<br/>
+<br/>
+<img src="image 12.png"/><br/>
+<br/>
+Here is another example of python test for hello function we created earlier.<br/>
+<img src="image 13.png"/>	<img src="image 14.png"/><br/>
+<br/>
+We can test several items at once using loops and functions etc.<br/>
+<br/>
+Now what can we do is we need to create a separate folder for our test's program because whenever we ccreate more test programs for our future use we can perform several more functions using this folder.<br/>
+<br/>
+<img src="image 15.png"/><br/>
+<br/>
+Now even if this file remians empty The name of the file tells python that this is just not a common file but is a folder indeed particularly reserved for test_files<br/>
+<br/>
+Now what we can do is run tests over the whole folder.<br/>
+And the pytest will automatically search for all the files that can be tested , then run tests and afterwards display the output.<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</span></body></html>

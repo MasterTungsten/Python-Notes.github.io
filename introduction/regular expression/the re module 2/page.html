@@ -1,0 +1,187 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>The re Module </title>
+</head><body><span style="font-size: 14pt">Features:<ul><li>define and check for patterns.</li>
+<li>built-in functions to check and extract data from inputs.</li>
+</ul>
+<br/>
+<br/>
+syntax: re.search(pattern, string, flags=0)<br/>
+<br/>
+There are certain symbols which are useful in defining characters:<ul><li>&quot;.&quot; - any character except a newline</li>
+<li>&quot;*&quot; - 0 or more repititions</li>
+<li>&quot;+&quot; - 1or more repititions </li>
+<li>&quot;?&quot; - 0 or 1 repitition</li>
+<li>{m} - m repitition</li>
+<li>{m, n} - m-n repitition</li>
+</ul>
+<br/>
+Now see the slow progression of our program using this re library:<ul><li>I will post code and its vulnerability</li>
+</ul>
+<br/>
+<img src="image.png"/>	<img src="image 2.png"/><br/>
+<br/>
+<img src="image 3.png"/>  	<img src="image 4.png"/> <br/>
+<br/>
+This is a much better way to check the syntax or format of the input email<br/>
+<br/>
+This uses finite automata to check the inputted email address.<br/>
+<ul><li>This is a non=deterministics finite automata</li>
+<li>When input is given it will start from a so called start state and move to the first state</li>
+<li>Then it will decide, whether to stay or not in this first state:</li>
+<li style="list-style-type: none"><ul><li>So when the program is reads my email : malan@harvard.edu it is going to follow the curved edge inthe below figure</li>
+<li>See in the below figure the curved recursive edge is labelled with &quot;.&quot; which means any character but not empty </li>
+<li style="list-style-type: none"><ul><li>It will check every characters before @ in the mail</li>
+</ul>
+</li>
+<li>After checking and validating every character before @ it will follow the transition labelled with @.</li>
+<li>Now it will move to the next state which is doubled circle as it is the final state, which is an accepting state.It simply checks characters after @.</li>
+<li>Now if the computer finds itself in the second, accept state after reading all the characters of email, then it will accept it and state that it is indeed a valide state.</li>
+</ul>
+</li>
+<li>If by some chance the computer gets stuck in the first state which is not a accepting state it will state that this is an invalid email.</li>
+</ul>
+<br/>
+<br/>
+<img height="250" src="finite automata email validation.png" width="500"/><br/>
+<br/>
+<span style="font-size: 16pt">Now lets move further:</span><ul><li style="list-style-type: none">Lets assume that the Program now also checks for a proper domain name in the email and the users email has to end with &quot;.edu&quot; as well.</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"><img src="image 5.png"/>		<img src="image 6.png"/></li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+</ul>
+Here the r stands for raw string<ul><li>We are telling python that it should pass the command as literally a raw string and it should not insert any backslash into it.</li>
+<li>The \.edu means that we literally want the email to be valid to end with .edu, because &quot;.&quot; means any character in re .</li>
+</ul>
+<br/>
+<br/>
+Now we encounter a big problem!! Though our code looks quite good to validate emails what about this problem!!!<br/>
+<br/>
+<img src="image 7.png"/><br/>
+<br/>
+The python s literally validating a full sentence instead of just an email.<br/>
+Because technically the sentence perfectly fits into the condition we have written.!!<br/>
+<br/>
+Now to resolve this error we need some other special symbols!!<br/>
+<ul><li>^  -  matches the start of the string {carrot symbol}</li>
+<li>$ -  matches the end of the string just before the newline at the end of the string {dollor}</li>
+<li>[] -  set of characters</li>
+<li>[^] -  complementing the set</li>
+</ul>
+<br/>
+Now what the carrot symbol does here is it says any character but except the one follows immediately it in the square brackets []. <br/>
+e.g., [^@]<br/>
+<br/>
+While the end &quot; \.edu$ &quot; says that literally the email must end with &quot;.edu&quot;<br/>
+Lets add this feature to our code:<br/>
+<br/>
+<img src="image 8.png"/>		<img src="image 9.png"/><br/>
+<br/>
+See above now our program looks much more efficient as it only allows 1 @ symbol throughout the email address.<br/>
+<br/>
+Now here is a new and more advanced version of our code...<br/>
+<br/>
+What's happening here?<ul><li>The [] brackets accept a set of characters as defined earlier, so here it says any number of characters from a-z, A-Z, 0-9 or an underscore &quot;_&quot;.</li>
+<li>The syntax is as exactly shown in the line 5 below, no space, no separators. Just defining what you exactly want to accept. </li>
+</ul>
+<br/>
+<img src="image 10.png"/>		<img src="image 11.png"/><br/>
+<br/>
+See carefully the program denies anything that is outside of the scope of the defined characters.<br/>
+<ul><li>Now this set of characters looks like much more commonly used in the real world so there are shorter terms used to define this particular set of alphanumeric characters it is - &quot;\w&quot; which means a word!!</li>
+</ul>
+<br/>
+<br/>
+<img src="image 12.png"/>	This works the same...<br/>
+<br/>
+Now there so much of similar patterns defined for regular use but here is a small list which we will use! for REGULAR EXPRESSIONS.<br/>
+<ul><li>\d :- decimal digit</li>
+<li>\D :- no a decimal digit</li>
+<li>\s :- whitespace characters</li>
+<li>\S :- not a whitespace character</li>
+<li>\w :- word character ... as well as numbers and the underscore</li>
+<li>\W :- not a word character </li>
+</ul>
+<br/>
+Now as we move forward there arise a question can we accept a list of different domains in place of the last .edu term?<br/>
+<br/>
+Well yes!!!<br/>
+<br/>
+See how..<br/>
+We need to use these:<ul><li>A | B :- <i>either A or B </i></li>
+<li>(...)   :- a group</li>
+<li>(?:...) :- non-capturing version</li>
+</ul>
+<br/>
+<br/>
+<img src="image 13.png"/>		<img src="image 14.png"/><br/>
+<br/>
+Here also if we want to use blank spaces you can do it like this..<br/>
+<br/>
+<img src="image 15.png"/> Works the same just now you can also type a blank space<br/>
+<br/>
+Now we have another issue! we input the following input..<br/>
+<br/>
+<img src="image 16.png"/><br/>
+<ul><li>It seems to be perfectly fine because it does follow our convention of regular expression.</li>
+<li>But the domain name we are expecting from the user tends to be an issue as we only accept it literally &quot; .edu &quot; i.e., all small characters, but here in this example this is in all caps!</li>
+<li>So we have special functioning of re, if you remember the FLAGS!!, these flags allow us to use some predefined functions that are :</li>
+<li style="list-style-type: none"><ul><li>re.IGNORECASE</li>
+<li>re.MULTILINE</li>
+<li>re.DOTALL</li>
+</ul>
+</li>
+</ul>
+<br/>
+Here it is!!<br/>
+<br/>
+<img src="image 17.png"/>		<img src="image 18.png"/> before and after<br/>
+<br/>
+Well some important keypoints to keep in mind:<ul><li>We can use strings and f strings</li>
+<li>We can store the \w value in variable or ask the user to input their custom regular expression.</li>
+<li>Infact we can for some reason store user's actual input without changing it.</li>
+</ul>
+<br/>
+<br/>
+Now we solve one another problem!!<br/>
+You might have noticed that our gmails can have multiple dots &quot; . &quot; in them, but our current version of re is not letting users to input multiple dots.<br/>
+So how do we solve this..?<br/>
+<br/>
+<img src="image 19.png"/><br/>
+<br/>
+Now here this comes to help<br/>
+<br/>
+<img src="image 20.png"/><br/>
+<br/>
+If you remember our basics theory then you may recall that:<br/>
+a ? states either 0 or 1 repetition<br/>
+So that means.. <br/>
+<br/>
+<img src="image 21.png"/>	<img src="image 22.png"/><br/>
+<br/>
+So as you can see now both the versions of our email are accepted,<br/>
+the first one is standard : username@subdomain.domain.edu<br/>
+the second one is : username@domain.edu<br/>
+the program accepts both of them<br/>
+<ul><li>Besides regular expressions in python there are other functions in the re library:</li>
+</ul>
+<br/>
+One of them is this &quot;re.match(pattern, string, flags=0)<br/>
+<br/>
+<br/>
+Till now we were thinking that the user will type exactly we want and we will validate there data, but now let's assume that the user will nt type in the data that we want, so we are going to clean up their inputs.<br/>
+<br/>
+We can do that using csv's to do it manually, but let's see how to do it with python.<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</span></body></html>

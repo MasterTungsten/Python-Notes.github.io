@@ -1,0 +1,128 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Exceptions</title>
+</head><body><span style="font-size: 14pt">Exceptions in python are errors or problems that occur in program when you write the code wrong or doesnot follow the syntax correctly.<br/>
+<br/>
+Here is one basic example:<br/>
+The problem in the code is simply the doble inverted commas that aren't closed and watch the error in the terminal<br/>
+<br/>
+<img src="image.png"/>		<img src="image 2.png"/><br/>
+<br/>
+It show a SyntaxError <br/>
+<br/>
+Now, SyntaxErrors are errors that are all that you have to fix but there are lot of other errors in python known as RunTimeErrors<br/>
+<br/>
+Here is another common type of error :<br/>
+Literal means something that is typed in.<br/>
+<img src="image 3.png"/>		<img src="image 4.png"/><br/>
+<ul><li>Consider you have written a program for getting an integer value input from the user and then print it.</li>
+<li>But here you cannot directly convert the input taken from the user to integer as in exceptional case a user might not enter an integer,</li>
+<li>For example see the above piece of code and the error</li>
+<li>As said the user here instead of an integer types &quot;cat&quot; in the input which we have already converted to integer, so in these types of cases the python give a simple ValueError and it states this in a difficult i.e., not easy to understand way. </li>
+</ul>
+<br/>
+What's the catch here how can we handle this we need error handling for this.<br/>
+Watch how...<br/>
+<br/>
+<img src="image 6.png"/>		<img src="image 7.png"/><br/>
+<br/>
+Now this method can only handle the named error in it for example the ValueError if there is any other type of error detected the above code cannot handleit.<br/>
+So we need to improve it, we will see that further for here just see what can go wrong with a simple modification in code.<br/>
+Here in the above code we do not need the print statement in the try part, so we move it at the end of our code as follows:<br/>
+<br/>
+<br/>
+<img src="image 5.png"/>		<img src="image 8.png"/><br/>
+<br/>
+Wondering what can go wrong see this!! shocked? <br/>
+The program says NameError: x is not defined<br/>
+Here it is order of operations , i.e., in what order the program is executed.<br/>
+Here the NameError refers to the code you have written, it says that x is not defined it means the ValueError that we have catched is happening before it is catched.<br/>
+So there is another keyword in python to handle such scenarios which is &quot;else&quot;<br/>
+See how...<br/>
+<br/>
+<img src="image 9.png"/>		<img src="image 10.png"/><br/>
+<br/>
+So here it works like:<ul><li>Step-1 : Try the first block, check the input value with that of the except case, if nothing goes wrong print the statement{execute the} in else block.</li>
+<li>Step-2 : If the user enters a string or anything other than an integer execute the except block.</li>
+</ul>
+<br/>
+Now let's make the execution of this program more use friendly by making it ask repeaedly for value of x untill the user finally enters an integer.<br/>
+How can we do it? <br/>
+Yes, correct by using loop.<br/>
+We here use the whileTrue infinite loop as we do not know the exact number of times the program is going to be executed.<br/>
+Watch how it is done...<br/>
+<br/>
+<img src="image 11.png"/>		<img src="image 12.png"/><br/>
+<br/>
+Now we can create a function for this watch <ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"/>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<img src="image 14.png"/>		<img src="image 13.png"/>       <br/>
+<br/>
+<br/>
+In python while handling errors sometimes if you just don't want to do anything after catching the error then you have a choice of just passing it .<br/>
+<br/>
+You can use the pass keyword.<br/>
+Watch how...<br/>
+It simply passes the block in which we have written it. For example here in the below code it skips the except block and executes the try block again if ay ValueError occurs <br/>
+<br/>
+<img src="image 15.png"/>		<img src="image 16.png"/><br/>
+<br/>
+<img src="image 17.png"/>			This is another way of writing the same code.<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</span></body></html>
